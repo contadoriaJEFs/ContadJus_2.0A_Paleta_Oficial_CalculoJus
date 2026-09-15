@@ -3900,7 +3900,7 @@
   }
   #relatorioImpressaoPortal.modelo-calculo-jus .subtitulo-documento {
       margin-top: 1.5mm !important;
-      color: var(--cj-navy) !important;
+      color: var(--cj-text) !important;
       font-size: 9pt !important;
   }
   #relatorioImpressaoPortal.modelo-calculo-jus .data-emissao {
@@ -3927,11 +3927,11 @@
       line-height: 1.3 !important;
   }
   #relatorioImpressaoPortal.modelo-calculo-jus .identificacao-relatorio strong {
-      color: var(--cj-navy) !important;
+      color: var(--cj-text) !important;
   }
 
   #relatorioImpressaoPortal.modelo-calculo-jus .secao-relatorio h2 {
-      color: var(--cj-navy) !important;
+      color: var(--cj-text) !important;
       border-bottom: 1pt solid var(--cj-terracota) !important;
       font-size: 11.5pt !important;
       padding-bottom: 1.5mm !important;
@@ -3950,7 +3950,7 @@
   }
   #relatorioImpressaoPortal.modelo-calculo-jus .quadro-resumo .valor,
   #relatorioImpressaoPortal.modelo-calculo-jus .quadro-resumo-atualizacao .valor {
-      color: var(--cj-navy) !important;
+      color: var(--cj-text) !important;
   }
 
   #relatorioImpressaoPortal.modelo-calculo-jus .resultado-destaque {
@@ -3988,7 +3988,7 @@
   #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-atualizacao .total strong,
   #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-renuncia .total strong,
   #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-requisitorio .total strong {
-      color: var(--cj-navy) !important;
+      color: var(--cj-text) !important;
   }
   #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-diferencas .total.principal,
   #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-atualizacao .total.principal,
@@ -4074,3 +4074,13 @@
 .modal-modelo-relatorio-footer { display:flex; justify-content:flex-end; gap:8px; border-top:1px solid #e5e7eb; }
 body.modal-relatorio-aberto { overflow:hidden; }
 
+
+/* Precatório exclusivo: não exibir referências a salário mínimo/limite de 60 salários. */
+@media print {
+  #relatorioImpressaoPortal .secao-requisitorio-relatorio .quadro-resumo-requisitorio.requisitorio-sem-limites {
+      grid-template-columns: 1fr 1fr !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .secao-requisitorio-relatorio .quadro-resumo-requisitorio.requisitorio-sem-limites {
+      grid-template-columns: 1fr 1fr !important;
+  }
+}

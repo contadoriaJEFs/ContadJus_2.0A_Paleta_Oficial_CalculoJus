@@ -1157,11 +1157,12 @@ function gerarSecaoRequisitorioRelatorioProfissional(continuaEmNovaPagina = fals
     const temSuc = document.getElementById('temSucumbencia')?.selectedOptions?.[0]?.textContent?.trim() || '-';
     const aplicarContrato = document.getElementById('aplicarHonorariosContratuais')?.selectedOptions?.[0]?.textContent?.trim() || '-';
     const tipo = relatorioObterTipoRequisitorio();
+    const tipoRequisitorioAtual = document.getElementById('tipoRequisitorio')?.value || 'ambos';
+    const isPrecatorioExclusivo = tipoRequisitorioAtual === 'precatorio';
 
     // O relatório deve respeitar a seleção feita na Guia 7.
     // A interface já oculta o bloco não selecionado; aqui aplicamos a mesma
     // regra ao documento para impedir que dados ocultos reapareçam no relatório.
-    const tipoRequisitorioAtual = document.getElementById('tipoRequisitorio')?.value || 'ambos';
     const incluirRpv = tipoRequisitorioAtual === 'rpv' || tipoRequisitorioAtual === 'ambos';
     const incluirPrecatorio = tipoRequisitorioAtual === 'precatorio' || tipoRequisitorioAtual === 'ambos';
 
@@ -1195,11 +1196,12 @@ function gerarSecaoRequisitorioRelatorioProfissional(continuaEmNovaPagina = fals
 
     return `<section class="secao-relatorio secao-requisitorio-relatorio ${continuaEmNovaPagina ? 'continua-em-pagina' : ''}">
         <h2>Resultado do Requisitório</h2>
-        <div class="quadro-resumo quadro-resumo-requisitorio">
+        <div class="quadro-resumo quadro-resumo-requisitorio ${isPrecatorioExclusivo ? 'requisitorio-sem-limites' : ''}">
             <div class="item"><span class="rotulo">Data-base</span><span class="valor">${relatorioEscaparHtml(dataBase)}</span></div>
             <div class="item"><span class="rotulo">Tipo de requisitório</span><span class="valor valor-menor">${relatorioEscaparHtml(tipo)}</span></div>
+            ${!isPrecatorioExclusivo ? `
             <div class="item"><span class="rotulo">Salário mínimo</span><span class="valor">${relatorioEscaparHtml(salario)}</span></div>
-            <div class="item"><span class="rotulo">Limite de 60 salários mínimos</span><span class="valor">${relatorioEscaparHtml(limite)}</span></div>
+            <div class="item"><span class="rotulo">Limite de 60 salários mínimos</span><span class="valor">${relatorioEscaparHtml(limite)}</span></div>` : ''}
         </div>
         <div class="quadro-totais-atualizacao quadro-totais-requisitorio">
             <div class="total"><span>Principal da base</span><strong>${relatorioEscaparHtml(principal)}</strong></div>
@@ -1267,7 +1269,11 @@ function gerarRelatorioFinal() {
     const temBeneficios = selecoes.includes('beneficios-recebidos');
     const temDiferencas = selecoes.includes('diferencas');
     const temAtualizacao = selecoes.includes('atualizacao');
-    const temRenuncia = selecoes.includes('renuncia');
+    const tipoRequisitorioSelecionado = document.getElementById('tipoRequisitorio')?.value || 'ambos';
+    // A seção de renúncia trata exclusivamente da lógica de RPV. Quando a
+    // Guia 7 estiver configurada somente como Precatório, ela não deve
+    // aparecer em nenhum modelo de relatório.
+    const temRenuncia = selecoes.includes('renuncia') && tipoRequisitorioSelecionado !== 'precatorio';
     const temRequisitorio = selecoes.includes('requisitorio');
     const temComplementares = selecoes.includes('relatorios');
 
