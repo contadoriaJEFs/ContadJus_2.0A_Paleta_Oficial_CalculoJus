@@ -3848,3 +3848,229 @@
       line-height: 1.05 !important;
   }
 }
+
+
+/* ===== MODELO ALTERNATIVO DE RELATÓRIO — CÁLCULO JUS ===== */
+/* =====================================================================
+   MODELO ALTERNATIVO DE RELATÓRIO — CÁLCULO JUS
+   Escopo exclusivo: #relatorioImpressaoPortal.modelo-calculo-jus.
+   Não altera a pré-visualização nem o modelo padrão aprovado.
+   ===================================================================== */
+@media print {
+  #relatorioImpressaoPortal.modelo-calculo-jus {
+      --cj-terracota: #B16447;
+      --cj-navy: #1A3152;
+      --cj-cream: #FAF9F7;
+      --cj-beige: #F1E9DF;
+      --cj-border: #d9d2ca;
+      --cj-text: #252525;
+      color: var(--cj-text) !important;
+      background: #fff !important;
+  }
+
+  #relatorioImpressaoPortal.modelo-calculo-jus .documento-cabecalho {
+      display: grid !important;
+      grid-template-columns: 4mm minmax(0,1fr) !important;
+      gap: 4mm !important;
+      align-items: start !important;
+      min-height: 0 !important;
+      padding: 0 0 4mm !important;
+      margin: 0 0 4mm !important;
+      border-bottom: 1.2pt solid var(--cj-terracota) !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .marca-titulo-calculo-jus {
+      width: 2.2mm !important;
+      min-height: 19mm !important;
+      height: 100% !important;
+      background: var(--cj-terracota) !important;
+      display: block !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .titulo-area-relatorio {
+      text-align: left !important;
+      min-width: 0 !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .titulo-documento {
+      color: var(--cj-terracota) !important;
+      font-size: 17pt !important;
+      line-height: 1.12 !important;
+      font-weight: 800 !important;
+      letter-spacing: .15px !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .subtitulo-documento {
+      margin-top: 1.5mm !important;
+      color: var(--cj-navy) !important;
+      font-size: 9pt !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .data-emissao {
+      margin-top: 1mm !important;
+      color: #6b625d !important;
+      font-size: 7.5pt !important;
+  }
+
+  #relatorioImpressaoPortal.modelo-calculo-jus .identificacao-relatorio {
+      margin: 0 0 5mm !important;
+      padding: 3mm 3.5mm !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 2mm 8mm !important;
+      border-left: 1.1mm solid var(--cj-terracota) !important;
+      border-top: .5pt solid var(--cj-border) !important;
+      border-right: .5pt solid var(--cj-border) !important;
+      border-bottom: .5pt solid var(--cj-border) !important;
+      background: var(--cj-cream) !important;
+      border-radius: 0 !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .identificacao-relatorio div {
+      color: #3f3a37 !important;
+      font-size: 8.8pt !important;
+      line-height: 1.3 !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .identificacao-relatorio strong {
+      color: var(--cj-navy) !important;
+  }
+
+  #relatorioImpressaoPortal.modelo-calculo-jus .secao-relatorio h2 {
+      color: var(--cj-navy) !important;
+      border-bottom: 1pt solid var(--cj-terracota) !important;
+      font-size: 11.5pt !important;
+      padding-bottom: 1.5mm !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .memoria-titulo-relatorio {
+      color: var(--cj-terracota) !important;
+  }
+
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-resumo,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-resumo-atualizacao {
+      border-color: var(--cj-border) !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-resumo .rotulo,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-resumo-atualizacao .rotulo {
+      color: #786d66 !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-resumo .valor,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-resumo-atualizacao .valor {
+      color: var(--cj-navy) !important;
+  }
+
+  #relatorioImpressaoPortal.modelo-calculo-jus .resultado-destaque {
+      border: .7pt solid #d8b9aa !important;
+      border-left: 1.4mm solid var(--cj-terracota) !important;
+      background: var(--cj-beige) !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .resultado-destaque .label {
+      color: #5f554f !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .resultado-destaque .valor {
+      color: var(--cj-terracota) !important;
+  }
+
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-diferencas,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-atualizacao,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-renuncia,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-requisitorio {
+      border-color: var(--cj-border) !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-diferencas .total,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-atualizacao .total,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-renuncia .total,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-requisitorio .total {
+      background: #fff !important;
+      border-right-color: var(--cj-border) !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-diferencas .total span,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-atualizacao .total span,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-renuncia .total span,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-requisitorio .total span {
+      color: #786d66 !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-diferencas .total strong,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-atualizacao .total strong,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-renuncia .total strong,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-requisitorio .total strong {
+      color: var(--cj-navy) !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-diferencas .total.principal,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-atualizacao .total.principal,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-renuncia .total.principal,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-requisitorio .total.principal {
+      background: var(--cj-beige) !important;
+      border: 1pt solid #d8b9aa !important;
+      border-radius: 1px !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-diferencas .total.principal strong,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-atualizacao .total.principal strong,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-renuncia .total.principal strong,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-requisitorio .total.principal strong {
+      color: var(--cj-terracota) !important;
+  }
+
+  #relatorioImpressaoPortal.modelo-calculo-jus table th,
+  #relatorioImpressaoPortal.modelo-calculo-jus table.tabela-evolucao-relatorio th {
+      background: var(--cj-terracota) !important;
+      border-color: var(--cj-terracota) !important;
+      color: #fff !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus table td {
+      border-color: var(--cj-border) !important;
+      color: #34302d !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus table tbody tr:nth-child(even) td {
+      background: var(--cj-cream) !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus table td:last-child {
+      color: var(--cj-terracota) !important;
+      font-weight: 800 !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .rodape-diferencas-relatorio {
+      border-top-color: var(--cj-terracota) !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .nota-relatorio {
+      color: #706660 !important;
+  }
+}
+
+/* Modal de escolha do modelo — interface, não faz parte do PDF. */
+.modal-modelo-relatorio {
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:100000;
+}
+.modal-modelo-relatorio.is-open { display:flex; align-items:center; justify-content:center; }
+.modal-modelo-relatorio-backdrop {
+    position:absolute;
+    inset:0;
+    background:rgba(15,23,42,.45);
+}
+.modal-modelo-relatorio-dialog {
+    position:relative;
+    width:min(520px, calc(100vw - 32px));
+    background:#fff;
+    border:1px solid #dbe3ec;
+    border-radius:10px;
+    box-shadow:0 24px 60px rgba(15,23,42,.22);
+    overflow:hidden;
+}
+.modal-modelo-relatorio-header,
+.modal-modelo-relatorio-footer { padding:16px 18px; }
+.modal-modelo-relatorio-header { display:flex; justify-content:space-between; gap:16px; border-bottom:1px solid #e5e7eb; }
+.modal-modelo-relatorio-header h3 { margin:0; font-size:17px; color:#1e293b; }
+.modal-modelo-relatorio-header p { margin:5px 0 0; font-size:12px; color:#64748b; }
+.modal-modelo-relatorio-fechar { border:0; background:transparent; font-size:25px; line-height:1; color:#64748b; cursor:pointer; }
+.modal-modelo-relatorio-body { padding:18px; }
+.modal-modelo-relatorio-titulo { font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.4px; color:#64748b; margin-bottom:9px; }
+.modelo-relatorio-opcao { display:flex; align-items:flex-start; gap:10px; padding:13px; margin-bottom:9px; border:1px solid #dbe3ec; border-radius:7px; cursor:pointer; }
+.modelo-relatorio-opcao:has(input:checked) { border-color:#002b66; background:#f8fafc; }
+.modelo-relatorio-opcao input { margin-top:2px; }
+.modelo-relatorio-opcao span { display:flex; flex-direction:column; gap:3px; }
+.modelo-relatorio-opcao strong { font-size:13px; color:#1e293b; }
+.modelo-relatorio-opcao small { font-size:11px; color:#64748b; line-height:1.4; }
+.modelo-relatorio-nota { margin-top:13px; padding:10px 12px; background:#f8fafc; border-left:3px solid #cbd5e1; color:#64748b; font-size:11px; line-height:1.4; }
+.modal-modelo-relatorio-footer { display:flex; justify-content:flex-end; gap:8px; border-top:1px solid #e5e7eb; }
+body.modal-relatorio-aberto { overflow:hidden; }
+
