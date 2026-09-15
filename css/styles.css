@@ -4084,3 +4084,76 @@ body.modal-relatorio-aberto { overflow:hidden; }
       grid-template-columns: 1fr 1fr !important;
   }
 }
+
+
+/* ===== CÁLCULO JUS — PALETA FINAL DO RELATÓRIO ===== */
+@media print {
+  #relatorioImpressaoPortal.modelo-calculo-jus {
+    color: #2f2f2f !important;
+  }
+
+  /* O navy deixa de ser usado como cor de texto no modelo alternativo. */
+  #relatorioImpressaoPortal.modelo-calculo-jus .titulo-documento,
+  #relatorioImpressaoPortal.modelo-calculo-jus .secao-relatorio h2,
+  #relatorioImpressaoPortal.modelo-calculo-jus .identificacao-relatorio strong,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-resumo .valor,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-resumo-atualizacao .valor,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-diferencas .total strong,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-atualizacao .total strong,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-renuncia .total strong,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-requisitorio .total strong {
+    color: #2f2f2f !important;
+  }
+
+  /* Terracota permanece como elemento de identidade e destaque. */
+  #relatorioImpressaoPortal.modelo-calculo-jus .memoria-titulo-relatorio,
+  #relatorioImpressaoPortal.modelo-calculo-jus .resultado-destaque .valor,
+  #relatorioImpressaoPortal.modelo-calculo-jus table td:last-child,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-diferencas .total.principal strong,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-atualizacao .total.principal strong,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-renuncia .total.principal strong,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-requisitorio .total.principal strong {
+    color: #B16447 !important;
+  }
+
+  /* Todas as tabelas do modelo alternativo usam terracota no cabeçalho. */
+  #relatorioImpressaoPortal.modelo-calculo-jus table th,
+  #relatorioImpressaoPortal.modelo-calculo-jus .requisitorio-tabela-wrap th,
+  #relatorioImpressaoPortal.modelo-calculo-jus .tabela-complementar-relatorio th,
+  #relatorioImpressaoPortal.modelo-calculo-jus .tabela-renuncia-relatorio th {
+    background: #B16447 !important;
+    border-color: #B16447 !important;
+    color: #fff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Neutraliza regras posteriores do relatório padrão que deixavam
+     células específicas do requisitório em azul. */
+  #relatorioImpressaoPortal.modelo-calculo-jus .requisitorio-tabela-wrap td:nth-child(5),
+  #relatorioImpressaoPortal.modelo-calculo-jus .requisitorio-tabela-wrap td:nth-child(9) {
+    color: #34302d !important;
+  }
+
+  #relatorioImpressaoPortal.modelo-calculo-jus table td,
+  #relatorioImpressaoPortal.modelo-calculo-jus .requisitorio-tabela-wrap td,
+  #relatorioImpressaoPortal.modelo-calculo-jus .tabela-complementar-relatorio td,
+  #relatorioImpressaoPortal.modelo-calculo-jus .tabela-renuncia-relatorio td {
+    color: #34302d !important;
+  }
+
+  #relatorioImpressaoPortal.modelo-calculo-jus table td:last-child,
+  #relatorioImpressaoPortal.modelo-calculo-jus .tabela-complementar-relatorio td:last-child,
+  #relatorioImpressaoPortal.modelo-calculo-jus .tabela-renuncia-relatorio td:last-child {
+    color: #B16447 !important;
+    font-weight: 800 !important;
+  }
+
+  /* Totais de fechamento continuam com destaque terracota. */
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-requisitorio .total.principal,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-atualizacao .total.principal,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-diferencas .total.principal {
+    background: #F1E9DF !important;
+    border-color: #d8b9aa !important;
+  }
+}

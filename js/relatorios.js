@@ -1189,6 +1189,7 @@ function gerarSecaoRequisitorioRelatorioProfissional(continuaEmNovaPagina = fals
                 const clone = tabela.cloneNode(true);
                 clone.removeAttribute('id');
                 clone.querySelectorAll('[id]').forEach(el => el.removeAttribute('id'));
+
                 tabelaPrec = `<h3 class="memoria-titulo-relatorio">CÁLCULO — PRECATÓRIO</h3><div class="tabela-relatorio-complementar-wrap requisitorio-tabela-wrap">${clone.outerHTML}</div>`;
             }
         }
@@ -1214,12 +1215,6 @@ function gerarSecaoRequisitorioRelatorioProfissional(continuaEmNovaPagina = fals
             <div class="total"><span>RPV — juros</span><strong>${relatorioEscaparHtml(rpvJuros)}</strong></div>
             <div class="total"><span>RPV — SELIC</span><strong>${relatorioEscaparHtml(rpvSelic)}</strong></div>
             <div class="total principal"><span>RPV — total</span><strong>${relatorioEscaparHtml(rpvTotal)}</strong></div>
-        </div>` : ''}
-        ${incluirPrecatorio ? `<div class="quadro-totais-atualizacao quadro-totais-requisitorio">
-            <div class="total"><span>Precatório — principal</span><strong>${relatorioEscaparHtml(precPrincipal)}</strong></div>
-            <div class="total"><span>Precatório — juros</span><strong>${relatorioEscaparHtml(precJuros)}</strong></div>
-            <div class="total"><span>Precatório — SELIC</span><strong>${relatorioEscaparHtml(precSelic)}</strong></div>
-            <div class="total principal"><span>Precatório — total</span><strong>${relatorioEscaparHtml(precTotal)}</strong></div>
         </div>` : ''}
         <div class="quadro-resumo quadro-resumo-requisitorio-secundario">
             <div class="item"><span class="rotulo">Honorários contratuais</span><span class="valor">${relatorioEscaparHtml(aplicarContrato)}</span></div>
