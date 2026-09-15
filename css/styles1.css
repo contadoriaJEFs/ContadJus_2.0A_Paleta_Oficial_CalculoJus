@@ -1,19 +1,10 @@
-/* ===== PALETA OFICIAL CÁLCULO JUS / CONTADJUS ===== */
-:root {
-    --cj-navy: #1A3152;
-    --cj-terracota: #B16447;
-    --cj-cream: #FAF9F7;
-    --cj-white: #FFFFFF;
-    --cj-bege: #F1E9DF;
-}
-
 /* ===== ESTILOS GERAIS ===== */
 @media print {
     body { background: white; }
     .no-print { display: none !important; }
     .print-shadow { box-shadow: none !important; border: 1px solid #cbd5e1; }
     .memoria-tabela th {
-        background: #F1E9DF !important;
+        background: #f1f5f9 !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
@@ -32,7 +23,7 @@
     }
     .identificacao-bloco {
         border: 1px solid #cbd5e1 !important;
-        background: #FAF9F7 !important;
+        background: #f8fafc !important;
     }
     .guia-container .conteudo-guia {
         display: none !important;
@@ -86,7 +77,7 @@
     position: sticky;
     top: 0;
     z-index: 10;
-    background: #F1E9DF;
+    background: #f1f5f9;
     border-bottom: 2px solid #cbd5e1;
 }
 .memoria-tabela .row-piso {
@@ -97,11 +88,11 @@
 }
 .memoria-tabela .valor-final {
     font-weight: 700;
-    color: #1A3152;
+    color: #0f172a;
 }
 
 .resumo-executivo {
-    background: #FAF9F7;
+    background: #f8fafc;
     border: 1px solid #e2e8f0;
     border-radius: 0.5rem;
     padding: 0.75rem 1.25rem;
@@ -123,11 +114,11 @@
 .resumo-executivo .valor {
     font-weight: 700;
     font-size: 1rem;
-    color: #1A3152;
+    color: #0f172a;
 }
 
 .identificacao-bloco {
-    background: #FAF9F7;
+    background: #f8fafc;
     border: 1px solid #e2e8f0;
     border-radius: 0.5rem;
     padding: 0.75rem 1.25rem;
@@ -149,7 +140,7 @@
 .identificacao-bloco .valor {
     font-weight: 600;
     font-size: 0.95rem;
-    color: #1A3152;
+    color: #0f172a;
     word-break: break-word;
 }
 
@@ -197,7 +188,7 @@
 }
 .guia-container .nav-guia button.ativo {
     color: #1e40af;
-    border-bottom-color: #B16447;
+    border-bottom-color: #2563eb;
 }
 .guia-container .conteudo-guia {
     display: none;
@@ -208,7 +199,7 @@
 
 /* ===== BENEFÍCIOS RECEBIDOS ===== */
 .beneficio-recebido-bloco {
-    background: #FAF9F7;
+    background: #f8fafc;
     border: 1px solid #e2e8f0;
     border-radius: 0.5rem;
     padding: 1rem;
@@ -232,7 +223,7 @@
 }
 .beneficio-recebido-bloco .btn-copiar-devido {
     background: #e0ecff;
-    color: #9A4F35;
+    color: #1d4ed8;
     border: 1px solid #bfdbfe;
     border-radius: 0.375rem;
     padding: 0.35rem 0.75rem;
@@ -259,9 +250,9 @@
     padding: 0 0.1rem;
 }
 .cadeado.fechado { color: #64748b; }
-.cadeado.aberto { color: #B16447; }
+.cadeado.aberto { color: #2563eb; }
 .cadeado:focus {
-    outline: 2px solid #B16447;
+    outline: 2px solid #2563eb;
     outline-offset: 2px;
     border-radius: 4px;
 }
@@ -311,7 +302,7 @@
 }
 
 #tabelaDiferencas thead th {
-    color: #1A3152;
+    color: #0f172a;
     font-weight: 700;
     text-transform: uppercase;
     font-size: 0.65rem;
@@ -348,10 +339,10 @@
     font-family: inherit;
     font-size: inherit;
     padding: 0.2rem 0;
-    color: #1A3152;
+    color: #0f172a;
 }
 #tabelaDiferencas td input:focus {
-    outline: 2px solid #B16447;
+    outline: 2px solid #2563eb;
     outline-offset: -2px;
     border-radius: 2px;
 }
@@ -368,7 +359,7 @@
 
 /* ===== BLOCO COMPETÊNCIAS MODIFICADAS ===== */
 #blocoCompetenciasModificadas {
-    background: #FAF9F7;
+    background: #f8fafc;
     border: 1px solid #e2e8f0;
     border-radius: 0.5rem;
     padding: 0.75rem;
@@ -436,7 +427,7 @@
 .btn-motivo.tem-justificativa::before {
     content: "●";
     font-size: 0.5rem;
-    color: #B16447;
+    color: #2563eb;
 }
 .btn-motivo.tem-justificativa-relatorio::after {
     content: " 📄";
@@ -445,7 +436,7 @@
 
 .linha-destaque {
     background: #dbeafe !important;
-    border-left: 4px solid #B16447;
+    border-left: 4px solid #2563eb;
 }
 
 /* ===== MODAL JUSTIFICATIVA ===== */
@@ -546,7 +537,7 @@
 
 #rmi:read-only,
 .rmi-automatico {
-    background-color: #F1E9DF !important;
+    background-color: #f1f5f9 !important;
     color: #475569;
 }
 
@@ -582,7 +573,7 @@
 
 /* Zebra discreta */
 #corpoDiferencasAtualizacao tr:nth-child(even) {
-    background-color: #FAF9F7;
+    background-color: #f8fafc;
 }
 
 #corpoDiferencasAtualizacao tr:nth-child(odd) {
@@ -590,7 +581,7 @@
 }
 
 #corpoDiferencasAtualizacao tr:hover {
-    background-color: #F1E9DF !important;
+    background-color: #f1f5f9 !important;
 }
 
 /* A classe .linha-13 na Guia 5 NÃO força fundo ou borda */
@@ -631,7 +622,7 @@
 }
 
 .resultado-renuncia-item strong {
-    color: #1A3152;
+    color: #0f172a;
     font-family: 'Courier New', monospace;
     font-size: 0.9rem;
 }
@@ -642,7 +633,7 @@
 }
 
 .resultado-renuncia-item.destaque strong {
-    color: #9A4F35;
+    color: #1d4ed8;
     font-size: 1rem;
 }
 
@@ -675,11 +666,11 @@
 #resumoAjuizamentoMemoria strong,
 #resumoParcelasVincendas strong {
     font-size: 0.98rem;
-    color: #1A3152;
+    color: #0f172a;
 }
 #resumoAjuizamentoMemoria > div:last-child strong,
 #resumoParcelasVincendas > div:last-child strong {
-    color: #9A4F35;
+    color: #1d4ed8;
     font-size: 1.05rem;
 }
 #painelParcelasVincendas table tbody tr:last-child td {
@@ -698,7 +689,7 @@
     gap: 0.75rem;
     margin: 0.5rem 0 1rem;
     padding: 0.45rem 0.7rem;
-    background: #FAF9F7;
+    background: #f8fafc;
     border: 1px solid #e2e8f0;
     border-radius: 0.5rem;
 }
@@ -738,7 +729,7 @@
 .acao-exportar:hover { background: #d1fae5; }
 
 .acao-importar {
-    color: #9A4F35;
+    color: #1d4ed8;
     background: #eff6ff;
     border-color: #bfdbfe;
 }
@@ -748,7 +739,7 @@
     color: #475569;
     background: #ffffff;
 }
-.acao-limpar:hover { background: #FAF9F7; }
+.acao-limpar:hover { background: #f8fafc; }
 
 /* Formação da Demanda: mesmo peso/tamanho do total das vincendas. */
 .resultado-renuncia-item.destaque strong {
@@ -779,7 +770,7 @@
    servem apenas para facilitar a leitura da lista nativa do navegador. */
 #modeloSelect option.preset-2026 {
     background-color: #eff6ff;
-    color: #9A4F35;
+    color: #1d4ed8;
 }
 
 #modeloSelect option.preset-2022 {
@@ -788,7 +779,7 @@
 }
 
 #modeloSelect optgroup[label="2026"] {
-    color: #9A4F35;
+    color: #1d4ed8;
     font-weight: 700;
 }
 
@@ -801,7 +792,7 @@
 #modeloSelect.preset-selecionado-2026 {
     background-color: #eff6ff !important;
     border-color: #93c5fd;
-    color: #9A4F35;
+    color: #1d4ed8;
 }
 
 #modeloSelect.preset-selecionado-2022 {
@@ -863,13 +854,13 @@
 /* Percentual do acordo: quando desabilitado, volta ao cinza informativo. */
 #guia-renuncia #percentualAcordoPreset:disabled,
 #guia-renuncia #percentualAcordo:disabled {
-    background-color: #F1E9DF !important;
+    background-color: #f1f5f9 !important;
     color: #64748b;
 }
 
 /* Bloco do acordo: área geral cinza; controles editáveis permanecem brancos. */
 #guia-renuncia #painelAtualizacaoRenuncia + div {
-    background-color: #FAF9F7;
+    background-color: #f8fafc;
 }
 
 /* Destaque semântico para valor efetivamente renunciado. */
@@ -886,7 +877,7 @@
     background-color: #ffffff !important;
 }
 #guia-requisitorio #dataBaseRequisitorio[readonly] {
-    background-color: #F1E9DF !important;
+    background-color: #f1f5f9 !important;
 }
 
 
@@ -898,7 +889,7 @@
 }
 #guia-beneficios-recebidos .beneficio-recebido-bloco [data-campo][disabled],
 #guia-beneficios-recebidos .beneficio-recebido-bloco [data-campo][readonly] {
-    background-color: #F1E9DF !important;
+    background-color: #f1f5f9 !important;
 }
 #guia-beneficios-recebidos .beneficio-recebido-bloco [data-campo].bg-amber-50,
 #guia-beneficios-recebidos .beneficio-recebido-bloco [data-campo][data-importado-guia1="true"] {
@@ -930,14 +921,14 @@
 .relatorio-opcoes-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
 .relatorio-opcao { display:flex; align-items:flex-start; gap:10px; padding:10px 12px; border:1px solid #dbe3ec; border-radius:8px; background:#fff; cursor:pointer; transition:.15s ease; }
 .relatorio-opcao:hover { border-color:#93c5fd; background:#f8fbff; }
-.relatorio-opcao input { margin-top:2px; accent-color:#1A3152; }
+.relatorio-opcao input { margin-top:2px; accent-color:#002b66; }
 .relatorio-opcao strong { display:block; font-size:13px; color:#1e3a5f; }
 .relatorio-opcao small { display:block; margin-top:2px; font-size:11px; color:#64748b; }
-.relatorio-opcao.is-disabled { opacity:.48; cursor:not-allowed; background:#F1E9DF; }
+.relatorio-opcao.is-disabled { opacity:.48; cursor:not-allowed; background:#f1f5f9; }
 .relatorio-aviso { margin-top:10px; padding:8px 10px; border-radius:7px; border:1px solid #fde68a; background:#fffbeb; color:#92400e; font-size:12px; }
 .relatorios-acoes { display:flex; gap:8px; align-items:center; margin:12px 0; }
 .relatorio-btn { border:0; border-radius:5px; padding:8px 14px; font-size:12px; font-weight:700; cursor:pointer; }
-.relatorio-btn-principal { background:#1A3152; color:#fff; }
+.relatorio-btn-principal { background:#002b66; color:#fff; }
 .relatorio-btn-imprimir { background:#475569; color:#fff; }
 .relatorio-btn-secundario { background:#fff; color:#334155; border:1px solid #cbd5e1; }
 
@@ -969,7 +960,7 @@
     gap:28px;
     padding:0 0 14px;
     margin-bottom:18px;
-    border-bottom:3px solid #B16447;
+    border-bottom:3px solid #00a8b5;
     min-height:108px;
 }
 .relatorio-documento .marca-relatorio {
@@ -994,15 +985,15 @@
     font-size:20px;
     line-height:1.15;
     font-weight:800;
-    color:#1A3152;
+    color:#002b66;
     text-transform:uppercase;
     letter-spacing:.35px;
 }
 .relatorio-documento .subtitulo-documento { margin-top:5px; font-size:11px; color:#475569; }
 .relatorio-documento .data-emissao { margin-top:4px; font-size:9px; color:#64748b; }
 .relatorio-documento .identificacao-relatorio {
-    border-left:4px solid #1A3152;
-    background:#FAF9F7;
+    border-left:4px solid #002b66;
+    background:#f8fafc;
     border-top:1px solid #e2e8f0;
     border-right:1px solid #e2e8f0;
     border-bottom:1px solid #e2e8f0;
@@ -1014,12 +1005,12 @@
     gap:8px 24px;
 }
 .relatorio-documento .identificacao-relatorio div { font-size:12.5px; color:#334155; line-height:1.4; }
-.relatorio-documento .identificacao-relatorio strong { color:#1A3152; font-weight:800; }
+.relatorio-documento .identificacao-relatorio strong { color:#0f172a; font-weight:800; }
 .relatorio-documento .secao-relatorio { margin-top:18px; break-inside:avoid; }
 .relatorio-documento .secao-relatorio h2 {
     font-size:17px;
-    color:#1A3152;
-    border-bottom:2px solid #B16447;
+    color:#002b66;
+    border-bottom:2px solid #00a8b5;
     padding-bottom:6px;
     margin:0 0 12px;
     text-transform:none;
@@ -1036,23 +1027,23 @@
 .relatorio-documento .quadro-resumo .item { padding:10px 11px; border-right:1px solid #e2e8f0; }
 .relatorio-documento .quadro-resumo .item:last-child { border-right:0; }
 .relatorio-documento .quadro-resumo .rotulo { display:block; font-size:9px; color:#64748b; text-transform:uppercase; font-weight:700; letter-spacing:.25px; }
-.relatorio-documento .quadro-resumo .valor { display:block; margin-top:3px; font-size:13px; font-weight:800; color:#1A3152; }
+.relatorio-documento .quadro-resumo .valor { display:block; margin-top:3px; font-size:13px; font-weight:800; color:#0f172a; }
 .relatorio-documento .resultado-destaque {
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:10px 12px;
     border:1px solid #9bd9df;
-    border-left:4px solid #B16447;
+    border-left:4px solid #00a8b5;
     background:#f0fdfa;
     border-radius:3px;
     margin:10px 0 18px;
 }
 .relatorio-documento .resultado-destaque .label { font-size:10px; color:#475569; font-weight:700; text-transform:uppercase; letter-spacing:.3px; }
-.relatorio-documento .resultado-destaque .valor { font-size:18px; font-weight:800; color:#1A3152; }
+.relatorio-documento .resultado-destaque .valor { font-size:18px; font-weight:800; color:#002b66; }
 .relatorio-documento .memoria-titulo-relatorio {
     margin:18px 0 8px;
-    color:#1A3152;
+    color:#002b66;
     font-size:14px;
     font-weight:800;
     letter-spacing:.35px;
@@ -1076,11 +1067,11 @@
 .relatorio-documento table.tabela-evolucao-relatorio col.col-evoluido { width:11%; }
 .relatorio-documento table.tabela-evolucao-relatorio col.col-final { width:11%; }
 .relatorio-documento table.tabela-evolucao-relatorio th {
-    background:#1A3152;
+    background:#002b66;
     color:#fff;
     text-align:center;
     padding:7px 4px;
-    border:1px solid #1A3152;
+    border:1px solid #002b66;
     font-size:9px;
     line-height:1.15;
     text-transform:uppercase;
@@ -1093,10 +1084,10 @@
     line-height:1.2;
     overflow-wrap:anywhere;
 }
-.relatorio-documento table.tabela-evolucao-relatorio tbody tr:nth-child(even) td { background:#F1E9DF; }
+.relatorio-documento table.tabela-evolucao-relatorio tbody tr:nth-child(even) td { background:#f1f5f9; }
 .relatorio-documento table.tabela-evolucao-relatorio td.num,
 .relatorio-documento table.tabela-evolucao-relatorio th.num { text-align:right; }
-.relatorio-documento table.tabela-evolucao-relatorio td:last-child { font-weight:800; color:#1A3152; }
+.relatorio-documento table.tabela-evolucao-relatorio td:last-child { font-weight:800; color:#002b66; }
 .relatorio-documento .nota-relatorio { font-size:10px; color:#64748b; margin-top:9px; line-height:1.45; }
 
 @media screen and (max-width:800px) {
@@ -1173,7 +1164,7 @@
       min-height: 28mm !important;
       padding: 0 0 4mm !important;
       margin: 0 0 4mm !important;
-      border-bottom: 1.4pt solid #B16447 !important;
+      border-bottom: 1.4pt solid #00a8b5 !important;
   }
   #relatorioImpressaoPortal .marca-relatorio {
       min-height: 0 !important;
@@ -1195,7 +1186,7 @@
       font-size: 13pt !important;
       line-height: 1.15 !important;
       font-weight: 800 !important;
-      color: #1A3152 !important;
+      color: #002b66 !important;
   }
   #relatorioImpressaoPortal .subtitulo-documento {
       margin-top: 1.2mm !important;
@@ -1214,11 +1205,11 @@
       padding: 2.8mm 3.2mm !important;
       grid-template-columns: 1fr 1fr !important;
       gap: 2mm 8mm !important;
-      border-left: 1.2mm solid #1A3152 !important;
+      border-left: 1.2mm solid #002b66 !important;
       border-top: .5pt solid #e2e8f0 !important;
       border-right: .5pt solid #e2e8f0 !important;
       border-bottom: .5pt solid #e2e8f0 !important;
-      background: #FAF9F7 !important;
+      background: #f8fafc !important;
       border-radius: 1px !important;
   }
   #relatorioImpressaoPortal .identificacao-relatorio div {
@@ -1227,7 +1218,7 @@
       color: #334155 !important;
   }
   #relatorioImpressaoPortal .identificacao-relatorio strong {
-      color: #1A3152 !important;
+      color: #0f172a !important;
       font-weight: 800 !important;
   }
 
@@ -1239,8 +1230,8 @@
   #relatorioImpressaoPortal .secao-relatorio h2 {
       font-size: 11.5pt !important;
       line-height: 1.2 !important;
-      color: #1A3152 !important;
-      border-bottom: 1pt solid #B16447 !important;
+      color: #002b66 !important;
+      border-bottom: 1pt solid #00a8b5 !important;
       padding-bottom: 1.5mm !important;
       margin: 0 0 3mm !important;
       font-weight: 800 !important;
@@ -1273,7 +1264,7 @@
       font-size: 9.5pt !important;
       line-height: 1.15 !important;
       font-weight: 800 !important;
-      color: #1A3152 !important;
+      color: #0f172a !important;
   }
 
   /* RMA: destaque moderado, sem o bloco exagerado da primeira versão. */
@@ -1284,7 +1275,7 @@
       padding: 2.4mm 3mm !important;
       margin: 0 0 4mm !important;
       border: .7pt solid #9bd9df !important;
-      border-left: 1.2mm solid #B16447 !important;
+      border-left: 1.2mm solid #00a8b5 !important;
       background: #f0fdfa !important;
       border-radius: 1px !important;
   }
@@ -1299,12 +1290,12 @@
       font-size: 13pt !important;
       line-height: 1 !important;
       font-weight: 800 !important;
-      color: #1A3152 !important;
+      color: #002b66 !important;
   }
 
   #relatorioImpressaoPortal .memoria-titulo-relatorio {
       margin: 0 0 2mm !important;
-      color: #1A3152 !important;
+      color: #002b66 !important;
       font-size: 10.5pt !important;
       line-height: 1.2 !important;
       font-weight: 800 !important;
@@ -1322,10 +1313,10 @@
       page-break-inside: auto !important;
   }
   #relatorioImpressaoPortal table.tabela-evolucao-relatorio th {
-      background: #1A3152 !important;
+      background: #002b66 !important;
       color: #fff !important;
       padding: 2.2mm 1.2mm !important;
-      border: .5pt solid #1A3152 !important;
+      border: .5pt solid #002b66 !important;
       font-size: 6.6pt !important;
       line-height: 1.05 !important;
       text-transform: uppercase !important;
@@ -1342,13 +1333,13 @@
       overflow-wrap: anywhere !important;
   }
   #relatorioImpressaoPortal table.tabela-evolucao-relatorio tbody tr:nth-child(even) td {
-      background: #F1E9DF !important;
+      background: #f1f5f9 !important;
       -webkit-print-color-adjust: exact !important;
       print-color-adjust: exact !important;
   }
   #relatorioImpressaoPortal table.tabela-evolucao-relatorio td:last-child {
       font-weight: 800 !important;
-      color: #1A3152 !important;
+      color: #002b66 !important;
   }
   #relatorioImpressaoPortal .nota-relatorio {
       font-size: 7.5pt !important;
@@ -1385,7 +1376,7 @@
 }
 .relatorio-documento .quadro-totais-atualizacao .total {
     padding:9px 10px;
-    background:#FAF9F7;
+    background:#f8fafc;
     border-right:1px solid #e2e8f0;
 }
 .relatorio-documento .quadro-totais-atualizacao .total:last-child { border-right:0; }
@@ -1405,9 +1396,9 @@
 }
 .relatorio-documento .quadro-totais-atualizacao .principal {
     background:#f0fdfa;
-    border-left:3px solid #B16447;
+    border-left:3px solid #00a8b5;
 }
-.relatorio-documento .quadro-totais-atualizacao .principal strong { color:#1A3152; }
+.relatorio-documento .quadro-totais-atualizacao .principal strong { color:#002b66; }
 .relatorio-documento .tabela-atualizacao-relatorio-wrap {
     width:100%;
     overflow-x:auto;
@@ -1421,11 +1412,11 @@
     font-size:7.1px;
 }
 .relatorio-documento table.tabela-atualizacao-relatorio th {
-    background:#1A3152;
+    background:#002b66;
     color:#fff;
     text-align:center;
     padding:5px 3px;
-    border:1px solid #1A3152;
+    border:1px solid #002b66;
     font-size:7px;
     line-height:1.1;
     text-transform:uppercase;
@@ -1463,15 +1454,15 @@
 .relatorio-documento table.tabela-atualizacao-relatorio td:nth-child(11) { width:10%; }
 .relatorio-documento table.tabela-atualizacao-relatorio td.num,
 .relatorio-documento table.tabela-atualizacao-relatorio th.num { text-align:right; }
-.relatorio-documento table.tabela-atualizacao-relatorio tbody tr:nth-child(even) td { background:#F1E9DF; }
+.relatorio-documento table.tabela-atualizacao-relatorio tbody tr:nth-child(even) td { background:#f1f5f9; }
 .relatorio-documento table.tabela-atualizacao-relatorio td.total,
-.relatorio-documento table.tabela-atualizacao-relatorio tfoot td.total { font-weight:800; color:#1A3152; }
+.relatorio-documento table.tabela-atualizacao-relatorio tfoot td.total { font-weight:800; color:#002b66; }
 .relatorio-documento table.tabela-atualizacao-relatorio tfoot th,
 .relatorio-documento table.tabela-atualizacao-relatorio tfoot td {
     background:#eaf4f6;
-    color:#1A3152;
+    color:#002b66;
     font-weight:800;
-    border-top:1.2px solid #B16447;
+    border-top:1.2px solid #00a8b5;
 }
 
 /* B95 — GUIA 5: preserva a linha de totais como bloco indivisível.
@@ -1503,7 +1494,7 @@
 }
 .relatorio-documento .quadro-totais-diferencas .total {
     padding:10px 12px;
-    background:#FAF9F7;
+    background:#f8fafc;
     border-right:1px solid #e2e8f0;
 }
 .relatorio-documento .quadro-totais-diferencas .total:last-child { border-right:0; }
@@ -1524,9 +1515,9 @@
 }
 .relatorio-documento .quadro-totais-diferencas .principal {
     background:#f0fdfa;
-    border-left:3px solid #B16447;
+    border-left:3px solid #00a8b5;
 }
-.relatorio-documento .quadro-totais-diferencas .principal strong { color:#1A3152; font-size:15px; }
+.relatorio-documento .quadro-totais-diferencas .principal strong { color:#002b66; font-size:15px; }
 .relatorio-documento .tabela-diferencas-relatorio-wrap { width:100%; overflow-x:auto; }
 .relatorio-documento table.tabela-diferencas-relatorio {
     width:100%;
@@ -1536,9 +1527,9 @@
     margin:0 0 7px;
 }
 .relatorio-documento table.tabela-diferencas-relatorio th {
-    background:#1A3152;
+    background:#002b66;
     color:#fff;
-    border:1px solid #1A3152;
+    border:1px solid #002b66;
     padding:6px 5px;
     font-size:7.5px;
     line-height:1.1;
@@ -1555,10 +1546,10 @@
 }
 .relatorio-documento table.tabela-diferencas-relatorio th.num,
 .relatorio-documento table.tabela-diferencas-relatorio td.num { text-align:right; }
-.relatorio-documento table.tabela-diferencas-relatorio tbody tr:nth-child(even) td { background:#F1E9DF; }
+.relatorio-documento table.tabela-diferencas-relatorio tbody tr:nth-child(even) td { background:#f1f5f9; }
 .relatorio-documento table.tabela-diferencas-relatorio td.destaque-diferenca {
     font-weight:800;
-    color:#1A3152;
+    color:#002b66;
 }
 .relatorio-documento .rodape-diferencas-relatorio {
     display:flex;
@@ -1583,8 +1574,8 @@
     display:grid;
     grid-template-columns:repeat(4,minmax(0,1fr));
     border:1px solid #cbd5e1;
-    border-left:4px solid #1A3152;
-    background:#FAF9F7;
+    border-left:4px solid #002b66;
+    background:#f8fafc;
     border-radius:3px;
     padding:9px 11px;
     gap:8px 16px;
@@ -1671,9 +1662,9 @@
       margin-bottom:2mm !important;
   }
   #relatorioImpressaoPortal table.tabela-diferencas-relatorio th {
-      background:#1A3152 !important;
+      background:#002b66 !important;
       color:#fff !important;
-      border-color:#1A3152 !important;
+      border-color:#002b66 !important;
       padding:1.8mm 1.2mm !important;
       font-size:6pt !important;
       line-height:1.05 !important;
@@ -1687,7 +1678,7 @@
       line-height:1.1 !important;
   }
   #relatorioImpressaoPortal table.tabela-diferencas-relatorio tbody tr:nth-child(even) td {
-      background:#F1E9DF !important;
+      background:#f1f5f9 !important;
       -webkit-print-color-adjust:exact !important;
       print-color-adjust:exact !important;
   }
@@ -1896,7 +1887,7 @@
     font-size: 11.5pt !important;
     font-weight: 700 !important;
     letter-spacing: 0 !important;
-    color: #1A3152 !important;
+    color: #002b66 !important;
     margin: 0 0 2.2mm !important;
     line-height: 1.2 !important;
 }
@@ -2002,7 +1993,7 @@
         bottom: 0 !important;
         height: 7mm !important;
         padding: 2mm 0 0 !important;
-        border-top: 1px solid #B16447 !important;
+        border-top: 1px solid #00a8b5 !important;
         color: #008080 !important;
         background: #fff !important;
         justify-content: flex-start !important;
@@ -2024,8 +2015,8 @@
 .relatorio-documento .memoria-titulo-relatorio {
     margin: 0 0 12px !important;
     padding-bottom: 6px !important;
-    border-bottom: 2px solid #B16447 !important;
-    color: #1A3152 !important;
+    border-bottom: 2px solid #00a8b5 !important;
+    color: #002b66 !important;
     font-family: Arial, Helvetica, sans-serif !important;
     font-size: 17px !important;
     font-weight: 400 !important;
@@ -2051,7 +2042,7 @@
 .relatorio-documento table.tabela-evolucao-relatorio td:last-child,
 .relatorio-documento table.tabela-beneficio-recebido td:last-child {
     font-weight: 600 !important;
-    color: #1A3152 !important;
+    color: #002b66 !important;
 }
 
 /* Guia 4 permanece como está: diferença devida continua com destaque 700. */
@@ -2090,7 +2081,7 @@
         line-height: 1.2 !important;
         margin: 0 0 3mm !important;
         padding-bottom: 1.6mm !important;
-        border-bottom: 1.4pt solid #B16447 !important;
+        border-bottom: 1.4pt solid #00a8b5 !important;
     }
 
     #relatorioImpressaoPortal table.tabela-evolucao-relatorio col.col-competencia { width: 8% !important; }
@@ -2195,8 +2186,8 @@
       font-size: 7.4pt !important; border-collapse: collapse !important;
   }
   #relatorioImpressaoPortal table.tabela-atualizacao-relatorio th {
-      background:#1A3152 !important; color:#fff !important;
-      border:1px solid #1A3152 !important; padding: 1.9mm 1.0mm !important;
+      background:#002b66 !important; color:#fff !important;
+      border:1px solid #002b66 !important; padding: 1.9mm 1.0mm !important;
       font-size: 6.8pt !important; line-height:1.08 !important;
       white-space: normal !important; overflow-wrap: normal !important;
       -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;
@@ -2207,13 +2198,13 @@
       border:1px solid #cbd5e1 !important;
   }
   #relatorioImpressaoPortal table.tabela-atualizacao-relatorio tbody tr:nth-child(even) td {
-      background:#F1E9DF !important;
+      background:#f1f5f9 !important;
       -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;
   }
   #relatorioImpressaoPortal table.tabela-atualizacao-relatorio tfoot th,
   #relatorioImpressaoPortal table.tabela-atualizacao-relatorio tfoot td {
-      background:#eaf4f6 !important; color:#1A3152 !important;
-      border-top:1.2px solid #B16447 !important;
+      background:#eaf4f6 !important; color:#002b66 !important;
+      border-top:1.2px solid #00a8b5 !important;
       -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;
   }
   #relatorioImpressaoPortal table.tabela-atualizacao-relatorio tfoot,
@@ -2246,7 +2237,7 @@
 }
 .relatorio-documento table.tabela-atualizacao-relatorio td.total {
     font-weight: 400 !important;
-    color: #1A3152 !important;
+    color: #002b66 !important;
 }
 .relatorio-documento .tabela-atualizacao-totalizador {
     display: grid;
@@ -2255,10 +2246,10 @@
     min-width: 1060px;
     box-sizing: border-box;
     background: #eaf4f6;
-    color: #1A3152;
+    color: #002b66;
     font-weight: 800;
-    border: 1px solid #1A3152;
-    border-top: 1.2px solid #B16447;
+    border: 1px solid #002b66;
+    border-top: 1.2px solid #00a8b5;
     break-inside: avoid !important;
     page-break-inside: avoid !important;
 }
@@ -2271,7 +2262,7 @@
 }
 .relatorio-documento .tabela-atualizacao-totalizador > div:last-child { border-right: 0; }
 .relatorio-documento .tabela-atualizacao-totalizador .num { text-align: right; }
-.relatorio-documento .tabela-atualizacao-totalizador .total { color:#1A3152; font-weight:800; }
+.relatorio-documento .tabela-atualizacao-totalizador .total { color:#002b66; font-weight:800; }
 
 @media print {
     #relatorioImpressaoPortal table.tabela-atualizacao-relatorio {
@@ -2285,7 +2276,7 @@
     }
     #relatorioImpressaoPortal table.tabela-atualizacao-relatorio td.total {
         font-weight: 400 !important;
-        color:#1A3152 !important;
+        color:#002b66 !important;
     }
     #relatorioImpressaoPortal .tabela-atualizacao-totalizador {
         min-width: 0 !important;
@@ -2325,9 +2316,9 @@
       cursor: pointer;
       list-style: none;
       padding: 10px 14px;
-      background: #FAF9F7;
+      background: #f8fafc;
       border-bottom: 1px solid #dbe3ec;
-      color: #1A3152;
+      color: #002b66;
       font-size: 15px;
       font-weight: 700;
       user-select: none;
@@ -2375,7 +2366,7 @@
   #previewRelatorio.relatorio-documento table.tabela-evolucao-relatorio tbody td:last-child,
   #previewRelatorio.relatorio-documento table.tabela-atualizacao-relatorio tbody td.total {
       font-weight: 400 !important;
-      color: #1A3152 !important;
+      color: #002b66 !important;
   }
   #previewRelatorio.relatorio-documento table.tabela-diferencas-relatorio td.total-recebido-relatorio {
       font-weight: 400 !important;
@@ -2383,7 +2374,7 @@
   }
   #previewRelatorio.relatorio-documento table.tabela-diferencas-relatorio td.destaque-diferenca {
       font-weight: 400 !important;
-      color: #1A3152 !important;
+      color: #002b66 !important;
   }
 
   /* Totalizador continua com a hierarquia aprovada. */
@@ -2427,7 +2418,7 @@
   #relatorioImpressaoPortal table.tabela-evolucao-relatorio tbody td:last-child,
   #relatorioImpressaoPortal table.tabela-beneficio-recebido tbody td:last-child {
       font-weight:400 !important;
-      color:#1A3152 !important;
+      color:#002b66 !important;
   }
   #relatorioImpressaoPortal table.tabela-diferencas-relatorio tbody td.total-recebido-relatorio {
       font-weight:400 !important;
@@ -2435,7 +2426,7 @@
   }
   #relatorioImpressaoPortal table.tabela-diferencas-relatorio tbody td.destaque-diferenca {
       font-weight:400 !important;
-      color:#1A3152 !important;
+      color:#002b66 !important;
   }
   #relatorioImpressaoPortal .tabela-atualizacao-totalizador,
   #relatorioImpressaoPortal .tabela-atualizacao-totalizador > div,
@@ -2597,7 +2588,7 @@
       box-sizing: border-box !important;
       padding: 2mm 0 0 !important;
       margin: 0 !important;
-      border-top: 1px solid #B16447 !important;
+      border-top: 1px solid #00a8b5 !important;
       color: #008080 !important;
       background: #fff !important;
       justify-content: flex-start !important;
@@ -2799,7 +2790,7 @@
       padding: 2mm 0 0 !important;
       margin: 0 !important;
       box-sizing: border-box !important;
-      border-top: 1px solid #B16447 !important;
+      border-top: 1px solid #00a8b5 !important;
   }
 
   /* Reserva uma faixa maior antes do rodapé. A margem é por página; a
@@ -2877,7 +2868,7 @@
         bottom: 0 !important;
         z-index: 99999 !important;
         box-sizing: border-box !important;
-        border-top: 1px solid #B16447 !important;
+        border-top: 1px solid #00a8b5 !important;
     }
 
     #relatorioImpressaoPortal .rodape-diferencas-relatorio,
@@ -2902,3 +2893,227 @@
         page-break-inside: avoid !important;
     }
 }
+
+
+/* =====================================================================
+   MODELO ALTERNATIVO DE RELATÓRIO — CÁLCULO JUS
+   Escopo exclusivo: #relatorioImpressaoPortal.modelo-calculo-jus.
+   Não altera a pré-visualização nem o modelo padrão aprovado.
+   ===================================================================== */
+@media print {
+  #relatorioImpressaoPortal.modelo-calculo-jus {
+      --cj-terracota: #B16447;
+      --cj-navy: #1A3152;
+      --cj-cream: #FAF9F7;
+      --cj-beige: #F1E9DF;
+      --cj-border: #d9d2ca;
+      --cj-text: #252525;
+      color: var(--cj-text) !important;
+      background: #fff !important;
+  }
+
+  #relatorioImpressaoPortal.modelo-calculo-jus .documento-cabecalho {
+      display: grid !important;
+      grid-template-columns: 4mm minmax(0,1fr) !important;
+      gap: 4mm !important;
+      align-items: start !important;
+      min-height: 0 !important;
+      padding: 0 0 4mm !important;
+      margin: 0 0 4mm !important;
+      border-bottom: 1.2pt solid var(--cj-terracota) !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .marca-titulo-calculo-jus {
+      width: 2.2mm !important;
+      min-height: 19mm !important;
+      height: 100% !important;
+      background: var(--cj-terracota) !important;
+      display: block !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .titulo-area-relatorio {
+      text-align: left !important;
+      min-width: 0 !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .titulo-documento {
+      color: var(--cj-terracota) !important;
+      font-size: 17pt !important;
+      line-height: 1.12 !important;
+      font-weight: 800 !important;
+      letter-spacing: .15px !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .subtitulo-documento {
+      margin-top: 1.5mm !important;
+      color: var(--cj-navy) !important;
+      font-size: 9pt !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .data-emissao {
+      margin-top: 1mm !important;
+      color: #6b625d !important;
+      font-size: 7.5pt !important;
+  }
+
+  #relatorioImpressaoPortal.modelo-calculo-jus .identificacao-relatorio {
+      margin: 0 0 5mm !important;
+      padding: 3mm 3.5mm !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 2mm 8mm !important;
+      border-left: 1.1mm solid var(--cj-terracota) !important;
+      border-top: .5pt solid var(--cj-border) !important;
+      border-right: .5pt solid var(--cj-border) !important;
+      border-bottom: .5pt solid var(--cj-border) !important;
+      background: var(--cj-cream) !important;
+      border-radius: 0 !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .identificacao-relatorio div {
+      color: #3f3a37 !important;
+      font-size: 8.8pt !important;
+      line-height: 1.3 !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .identificacao-relatorio strong {
+      color: var(--cj-navy) !important;
+  }
+
+  #relatorioImpressaoPortal.modelo-calculo-jus .secao-relatorio h2 {
+      color: var(--cj-navy) !important;
+      border-bottom: 1pt solid var(--cj-terracota) !important;
+      font-size: 11.5pt !important;
+      padding-bottom: 1.5mm !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .memoria-titulo-relatorio {
+      color: var(--cj-terracota) !important;
+  }
+
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-resumo,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-resumo-atualizacao {
+      border-color: var(--cj-border) !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-resumo .rotulo,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-resumo-atualizacao .rotulo {
+      color: #786d66 !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-resumo .valor,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-resumo-atualizacao .valor {
+      color: var(--cj-navy) !important;
+  }
+
+  #relatorioImpressaoPortal.modelo-calculo-jus .resultado-destaque {
+      border: .7pt solid #d8b9aa !important;
+      border-left: 1.4mm solid var(--cj-terracota) !important;
+      background: var(--cj-beige) !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .resultado-destaque .label {
+      color: #5f554f !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .resultado-destaque .valor {
+      color: var(--cj-terracota) !important;
+  }
+
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-diferencas,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-atualizacao,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-renuncia,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-requisitorio {
+      border-color: var(--cj-border) !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-diferencas .total,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-atualizacao .total,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-renuncia .total,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-requisitorio .total {
+      background: #fff !important;
+      border-right-color: var(--cj-border) !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-diferencas .total span,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-atualizacao .total span,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-renuncia .total span,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-requisitorio .total span {
+      color: #786d66 !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-diferencas .total strong,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-atualizacao .total strong,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-renuncia .total strong,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-requisitorio .total strong {
+      color: var(--cj-navy) !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-diferencas .total.principal,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-atualizacao .total.principal,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-renuncia .total.principal,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-requisitorio .total.principal {
+      background: var(--cj-beige) !important;
+      border: 1pt solid #d8b9aa !important;
+      border-radius: 1px !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-diferencas .total.principal strong,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-atualizacao .total.principal strong,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-renuncia .total.principal strong,
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-requisitorio .total.principal strong {
+      color: var(--cj-terracota) !important;
+  }
+
+  #relatorioImpressaoPortal.modelo-calculo-jus table th,
+  #relatorioImpressaoPortal.modelo-calculo-jus table.tabela-evolucao-relatorio th {
+      background: var(--cj-terracota) !important;
+      border-color: var(--cj-terracota) !important;
+      color: #fff !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus table td {
+      border-color: var(--cj-border) !important;
+      color: #34302d !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus table tbody tr:nth-child(even) td {
+      background: var(--cj-cream) !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus table td:last-child {
+      color: var(--cj-terracota) !important;
+      font-weight: 800 !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .rodape-diferencas-relatorio {
+      border-top-color: var(--cj-terracota) !important;
+  }
+  #relatorioImpressaoPortal.modelo-calculo-jus .nota-relatorio {
+      color: #706660 !important;
+  }
+}
+
+/* Modal de escolha do modelo — interface, não faz parte do PDF. */
+.modal-modelo-relatorio {
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:100000;
+}
+.modal-modelo-relatorio.is-open { display:flex; align-items:center; justify-content:center; }
+.modal-modelo-relatorio-backdrop {
+    position:absolute;
+    inset:0;
+    background:rgba(15,23,42,.45);
+}
+.modal-modelo-relatorio-dialog {
+    position:relative;
+    width:min(520px, calc(100vw - 32px));
+    background:#fff;
+    border:1px solid #dbe3ec;
+    border-radius:10px;
+    box-shadow:0 24px 60px rgba(15,23,42,.22);
+    overflow:hidden;
+}
+.modal-modelo-relatorio-header,
+.modal-modelo-relatorio-footer { padding:16px 18px; }
+.modal-modelo-relatorio-header { display:flex; justify-content:space-between; gap:16px; border-bottom:1px solid #e5e7eb; }
+.modal-modelo-relatorio-header h3 { margin:0; font-size:17px; color:#1e293b; }
+.modal-modelo-relatorio-header p { margin:5px 0 0; font-size:12px; color:#64748b; }
+.modal-modelo-relatorio-fechar { border:0; background:transparent; font-size:25px; line-height:1; color:#64748b; cursor:pointer; }
+.modal-modelo-relatorio-body { padding:18px; }
+.modal-modelo-relatorio-titulo { font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.4px; color:#64748b; margin-bottom:9px; }
+.modelo-relatorio-opcao { display:flex; align-items:flex-start; gap:10px; padding:13px; margin-bottom:9px; border:1px solid #dbe3ec; border-radius:7px; cursor:pointer; }
+.modelo-relatorio-opcao:has(input:checked) { border-color:#002b66; background:#f8fafc; }
+.modelo-relatorio-opcao input { margin-top:2px; }
+.modelo-relatorio-opcao span { display:flex; flex-direction:column; gap:3px; }
+.modelo-relatorio-opcao strong { font-size:13px; color:#1e293b; }
+.modelo-relatorio-opcao small { font-size:11px; color:#64748b; line-height:1.4; }
+.modelo-relatorio-nota { margin-top:13px; padding:10px 12px; background:#f8fafc; border-left:3px solid #cbd5e1; color:#64748b; font-size:11px; line-height:1.4; }
+.modal-modelo-relatorio-footer { display:flex; justify-content:flex-end; gap:8px; border-top:1px solid #e5e7eb; }
+body.modal-relatorio-aberto { overflow:hidden; }

@@ -1333,7 +1333,36 @@
 
                 <div class="relatorios-acoes no-print">
                     <button type="button" onclick="gerarRelatorioFinal()" class="relatorio-btn relatorio-btn-principal">Gerar relatório</button>
-                    <button type="button" onclick="imprimirRelatorioProfissional()" class="relatorio-btn relatorio-btn-imprimir">Gerar PDF / Imprimir</button>
+                    <button type="button" onclick="abrirModalModeloRelatorio()" class="relatorio-btn relatorio-btn-imprimir">Gerar PDF / Imprimir</button>
+                </div>
+
+                <div id="modalModeloRelatorio" class="modal-modelo-relatorio no-print" aria-hidden="true">
+                    <div class="modal-modelo-relatorio-backdrop" onclick="fecharModalModeloRelatorio()"></div>
+                    <div class="modal-modelo-relatorio-dialog" role="dialog" aria-modal="true" aria-labelledby="tituloModalModeloRelatorio">
+                        <div class="modal-modelo-relatorio-header">
+                            <div>
+                                <h3 id="tituloModalModeloRelatorio">Configuração do relatório</h3>
+                                <p>Escolha o modelo visual que será usado na impressão.</p>
+                            </div>
+                            <button type="button" class="modal-modelo-relatorio-fechar" onclick="fecharModalModeloRelatorio()" aria-label="Fechar">×</button>
+                        </div>
+                        <div class="modal-modelo-relatorio-body">
+                            <div class="modal-modelo-relatorio-titulo">Modelo visual</div>
+                            <label class="modelo-relatorio-opcao">
+                                <input type="radio" name="modeloVisualRelatorio" value="padrao" checked>
+                                <span><strong>Modelo atual</strong><small>Preserva exatamente a identidade visual já aprovada.</small></span>
+                            </label>
+                            <label class="modelo-relatorio-opcao">
+                                <input type="radio" name="modeloVisualRelatorio" value="calculo-jus">
+                                <span><strong>Modelo Cálculo Jus</strong><small>Nova apresentação com terracota predominante e barra vertical de identidade no título.</small></span>
+                            </label>
+                            <div class="modelo-relatorio-nota">A logo não faz parte do novo modelo nesta versão. A possibilidade de identidade/logo personalizada poderá ser adicionada posteriormente.</div>
+                        </div>
+                        <div class="modal-modelo-relatorio-footer">
+                            <button type="button" class="relatorio-btn relatorio-btn-secundario" onclick="fecharModalModeloRelatorio()">Cancelar</button>
+                            <button type="button" class="relatorio-btn relatorio-btn-principal" onclick="confirmarModeloRelatorioEImprimir()">Gerar PDF / Imprimir</button>
+                        </div>
+                    </div>
                 </div>
 
                 <div id="previewRelatorio" class="relatorio-documento" aria-live="polite">

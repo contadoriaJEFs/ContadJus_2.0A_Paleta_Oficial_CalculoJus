@@ -423,11 +423,29 @@ function limparSelecaoRelatorios() {
     document.querySelectorAll('#guia-relatorios .relatorio-opcao input[type="checkbox"]:not(:disabled), #guia-relatorios .relatorio-detalhamento-opcao input[type="checkbox"]:not(:disabled)').forEach(el => el.checked = false);
 }
 
-function montarCabecalhoRelatorioProfissional() {
+function montarCabecalhoRelatorioProfissional(modelo = 'padrao') {
     const processo = relatorioCampo('processo', 'Não informado');
     const autor = relatorioCampo('autor', 'Não informado');
     const reu = relatorioCampo('reu', 'Não informado');
     const dataCalculo = relatorioCampo('dataCalculo', relatorioCampo('dataAtualizacao', 'Não informado'));
+
+    if (modelo === 'calculo-jus') {
+        return `
+            <div class="documento-cabecalho cabecalho-modelo-calculo-jus">
+                <div class="marca-titulo-calculo-jus" aria-hidden="true"></div>
+                <div class="titulo-area-relatorio">
+                    <div class="titulo-documento">RELATÓRIO DE CÁLCULO JUDICIAL</div>
+                    <div class="subtitulo-documento">Evolução Previdenciária — RGPS / INSS</div>
+                    <div class="data-emissao">Emissão: ${relatorioEscaparHtml(dataCalculo)}</div>
+                </div>
+            </div>
+            <div class="identificacao-relatorio">
+                <div><strong>Número do processo:</strong> ${relatorioEscaparHtml(processo)}</div>
+                <div><strong>Nome da parte:</strong> ${relatorioEscaparHtml(autor)}</div>
+                <div><strong>Nome do réu:</strong> ${relatorioEscaparHtml(reu)}</div>
+                <div><strong>Data do cálculo:</strong> ${relatorioEscaparHtml(dataCalculo)}</div>
+            </div>`;
+    }
 
     return `
         <div class="documento-cabecalho">
@@ -1413,7 +1431,38 @@ function paginarTabelasRenunciaParaImpressao(portal, maxLinhas = 28) {
     });
 }
 
-function imprimirRelatorioProfissional() {
+let modeloVisualRelatorioSelecionado = 'padrao';
+
+function abrirModalModeloRelatorio() {
+    const preview = document.getElementById('previewRelatorio');
+    if (!preview || preview.querySelector('.relatorio-placeholder')) {
+        gerarRelatorioFinal();
+    }
+    const modal = document.getElementById('modalModeloRelatorio');
+    if (!modal) return;
+    const radio = modal.querySelector(`input[name="modeloVisualRelatorio"][value="${modeloVisualRelatorioSelecionado}"]`);
+    if (radio) radio.checked = true;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-relatorio-aberto');
+}
+
+function fecharModalModeloRelatorio() {
+    const modal = document.getElementById('modalModeloRelatorio');
+    if (!modal) return;
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-relatorio-aberto');
+}
+
+function confirmarModeloRelatorioEImprimir() {
+    const radio = document.querySelector('input[name="modeloVisualRelatorio"]:checked');
+    modeloVisualRelatorioSelecionado = radio?.value || 'padrao';
+    fecharModalModeloRelatorio();
+    imprimirRelatorioProfissional(modeloVisualRelatorioSelecionado);
+}
+
+function imprimirRelatorioProfissional(modelo = modeloVisualRelatorioSelecionado) {
     const preview = document.getElementById('previewRelatorio');
     if (!preview || preview.querySelector('.relatorio-placeholder')) {
         gerarRelatorioFinal();
@@ -1424,24 +1473,28 @@ function imprimirRelatorioProfissional() {
     portalAnterior?.remove();
     const portal = document.createElement('div');
     portal.id = 'relatorioImpressaoPortal';
-    // O preview possui a classe relatorio-documento no próprio container.
-    // Ao copiar apenas o innerHTML para o portal de impressão essa classe era perdida,
-    // fazendo todo o CSS profissional do relatório deixar de ser aplicado no PDF.
     portal.className = 'relatorio-documento';
     portal.innerHTML = atual.innerHTML;
     portal.querySelectorAll('details.relatorio-secao-recolhivel').forEach(details => {
         details.open = true;
     });
 
-    // B107 — na impressão, a Memória da Atualização é dividida em blocos de
-    // no máximo 28 linhas. O cabeçalho é repetido e o totalizador fica apenas
-    // no último bloco. A tabela da tela e os dados calculados permanecem intactos.
-    // B107 — detalhamentos novos da Guia 6 seguem a mesma linguagem de tabela
-    // e a mesma paginação segura, sem alterar a apresentação dos relatórios anteriores.
+    if (modelo === 'calculo-jus') {
+        portal.classList.add('modelo-calculo-jus');
+        const cabecalhoAtual = portal.querySelector('.documento-cabecalho');
+        if (cabecalhoAtual) {
+            const temp = document.createElement('div');
+            temp.innerHTML = montarCabecalhoRelatorioProfissional('calculo-jus');
+            const novoCabecalho = temp.firstElementChild;
+            cabecalhoAtual.replaceWith(novoCabecalho);
+            const identificacaoAtual = portal.querySelector('.identificacao-relatorio');
+            const novaIdentificacao = temp.querySelector('.identificacao-relatorio');
+            if (identificacaoAtual && novaIdentificacao) identificacaoAtual.replaceWith(novaIdentificacao);
+        }
+    }
+
     normalizarTabelasRequisitorioParaImpressao(portal);
     normalizarTabelasRenunciaParaImpressao(portal);
-
-    // O PDF não utiliza rodapé institucional fixo; isso evita sobreposição do conteúdo.
 
     document.body.appendChild(portal);
     window.print();
