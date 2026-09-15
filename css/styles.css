@@ -4158,77 +4158,39 @@ body.modal-relatorio-aberto { overflow:hidden; }
   }
 }
 
-/* ===== CÁLCULO JUS — AJUSTES FINAIS DE IDENTIDADE NAS TABELAS ===== */
+
+/* CÁLCULO JUS — refinamentos finais de impressão */
 @media print {
-  #relatorioImpressaoPortal.modelo-calculo-jus .tabela-atualizacao-totalizador,
-  #relatorioImpressaoPortal.modelo-calculo-jus .tabela-atualizacao-totalizador > div {
-    background: #F1E9DF !important;
-    border-color: #d8b9aa !important;
-    color: #34302d !important;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
+  #relatorioImpressaoPortal.modelo-calculo-jus table.tabela-diferencas-relatorio td.destaque-diferenca {
+      background: #f5e9e3 !important;
+      color: #B16447 !important;
+      font-weight: 800 !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
   }
-
+  #relatorioImpressaoPortal.modelo-calculo-jus table.tabela-diferencas-relatorio tbody tr:nth-child(even) td.destaque-diferenca,
+  #relatorioImpressaoPortal.modelo-calculo-jus table.tabela-diferencas-relatorio tbody tr:nth-child(odd) td.destaque-diferenca {
+      background: #f5e9e3 !important;
+  }
   #relatorioImpressaoPortal.modelo-calculo-jus .tabela-atualizacao-totalizador {
-    border: 1pt solid #d8b9aa !important;
+      background: #F1E9DF !important;
+      color: #34302d !important;
+      border-color: #d8b9aa !important;
+      border-top-color: #B16447 !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
   }
-
   #relatorioImpressaoPortal.modelo-calculo-jus .tabela-atualizacao-totalizador > div {
-    border-right: .5pt solid #d8b9aa !important;
-    font-weight: 600 !important;
+      border-right-color: #d8b9aa !important;
+      color: #34302d !important;
   }
-
-  #relatorioImpressaoPortal.modelo-calculo-jus .tabela-atualizacao-totalizador > div:first-child {
-    color: #B16447 !important;
-    font-weight: 800 !important;
+  #relatorioImpressaoPortal.modelo-calculo-jus .tabela-atualizacao-totalizador .total {
+      color: #B16447 !important;
+      font-weight: 800 !important;
   }
-
-  #relatorioImpressaoPortal.modelo-calculo-jus .tabela-atualizacao-totalizador > div:last-child,
-  #relatorioImpressaoPortal.modelo-calculo-jus .tabela-atualizacao-totalizador > div.total {
-    color: #B16447 !important;
-    font-weight: 800 !important;
-  }
-
-  /* A coluna Diferença Devida recebe destaque próprio no novo modelo. */
-  #relatorioImpressaoPortal.modelo-calculo-jus .tabela-diferencas-relatorio td.destaque-diferenca {
-    color: #A94728 !important;
-    background: #F1E1D8 !important;
-    font-weight: 800 !important;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-  }
-
-  #relatorioImpressaoPortal.modelo-calculo-jus .tabela-diferencas-relatorio th.destaque-diferenca,
-  #relatorioImpressaoPortal.modelo-calculo-jus .tabela-diferencas-relatorio th:nth-child(5) {
-    background: #B16447 !important;
-    color: #fff !important;
-  }
-
-  /* Todas as tabelas posteriores permanecem dentro da mesma identidade visual. */
-  #relatorioImpressaoPortal.modelo-calculo-jus table th,
-  #relatorioImpressaoPortal.modelo-calculo-jus table thead th {
-    background: #B16447 !important;
-    border-color: #B16447 !important;
-    color: #fff !important;
-  }
-
-  #relatorioImpressaoPortal.modelo-calculo-jus table td,
-  #relatorioImpressaoPortal.modelo-calculo-jus table tbody td {
-    color: #34302d !important;
-  }
-
-  #relatorioImpressaoPortal.modelo-calculo-jus table td:last-child {
-    color: #B16447 !important;
-    font-weight: 800 !important;
-  }
-
-  #relatorioImpressaoPortal.modelo-calculo-jus .requisitorio-tabela-wrap td:nth-child(5),
-  #relatorioImpressaoPortal.modelo-calculo-jus .requisitorio-tabela-wrap td:nth-child(9) {
-    color: #34302d !important;
-  }
-
-  #relatorioImpressaoPortal.modelo-calculo-jus .requisitorio-tabela-wrap td:last-child {
-    color: #B16447 !important;
-    font-weight: 800 !important;
+  #relatorioImpressaoPortal.modelo-calculo-jus .quadro-totais-atualizacao .total.principal strong {
+      font-size: 13.5px !important;
+      line-height: 1.15 !important;
+      white-space: nowrap !important;
   }
 }

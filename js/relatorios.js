@@ -680,13 +680,18 @@ function relatorioExtrairCelulaTabela(td) {
     return String(td.textContent ?? '').replace(/\s+/g, ' ').trim();
 }
 
+function relatorioRotuloCabecalho(h) {
+    const texto = String(h ?? '').replace(/\s+/g, ' ').trim();
+    return /^competência$/i.test(texto) ? 'Comp.' : texto;
+}
+
 function gerarTabelaDiferencasRelatorioProfissional() {
     const tabela = document.getElementById('tabelaDiferencas');
     const tbody = document.getElementById('corpoDiferencas');
     if (!tabela || !tbody) return '';
 
     const headers = Array.from(tabela.querySelectorAll('thead th'))
-        .map(th => String(th.textContent || '').replace(/\s+/g, ' ').trim());
+        .map(th => relatorioRotuloCabecalho(th.textContent));
     const rows = Array.from(tbody.querySelectorAll('tr'))
         .filter(tr => tr.querySelectorAll('td').length > 1);
 
@@ -743,7 +748,7 @@ function gerarSecaoComposicaoAcoesGeraisRelatorioProfissional(continuaEmNovaPagi
         return Number.isFinite(n) ? n : 0;
     };
     const total = linhas.reduce((s, l) => s + colunas.reduce((x, c) => x + (c.tipo === 'debito' ? -parse(l.valores?.[c.id]) : parse(l.valores?.[c.id])), 0), 0);
-    const cabecalhos = ['Competência', ...colunas.map(c => `${c.nome || 'Valor'} ${c.tipo === 'debito' ? '(−)' : '(+)'}`), 'Total Devido'];
+    const cabecalhos = ['Comp.', ...colunas.map(c => `${c.nome || 'Valor'} ${c.tipo === 'debito' ? '(−)' : '(+)'}`), 'Total Devido'];
     const corpo = linhas.map(l => {
         const totalLinha = colunas.reduce((x, c) => x + (c.tipo === 'debito' ? -parse(l.valores?.[c.id]) : parse(l.valores?.[c.id])), 0);
         return `<tr><td>${relatorioEscaparHtml(l.competencia)}</td>${colunas.map(c => `<td class=\"num\">${relatorioEscaparHtml(fmt(parse(l.valores?.[c.id])))}</td>`).join('')}<td class=\"num\"><strong>${relatorioEscaparHtml(fmt(totalLinha))}</strong></td></tr>`;
@@ -1007,7 +1012,7 @@ function gerarTabelaParcelasVencidasRenunciaRelatorio() {
     const linhas = Array.from(tbodyOrig.rows).filter(tr => tr.cells.length >= 2);
     if (!linhas.length) return '';
 
-    const headers = ['Competência', 'Valor original', 'Coef.', 'Corrigido', 'Juros', '% SELIC', 'SELIC', 'Total'];
+    const headers = ['Comp.', 'Valor original', 'Coef.', 'Corrigido', 'Juros', '% SELIC', 'SELIC', 'Total'];
     const body = linhas.map(tr => {
         const cells = Array.from(tr.cells);
         const vals = cells.slice(0, 8).map(td => relatorioValorTabelaSemMoeda(relatorioExtrairCelulaTabela(td)));
@@ -1046,7 +1051,7 @@ function gerarTabelaParcelasVincendasRenunciaRelatorio() {
         </tr>`;
     }).join('');
 
-    const headers = ['Competência', 'Valor original', 'Coef.', 'Principal corrigido', '% SELIC', 'SELIC', 'Total', 'Observação'];
+    const headers = ['Comp.', 'Valor original', 'Coef.', 'Principal corrigido', '% SELIC', 'SELIC', 'Total', 'Observação'];
     return `<div class="detalhamento-parcelas-renuncia">
         <h3 class="memoria-titulo-relatorio">PARCELAS VINCENDAS — ATÉ 12 COMPETÊNCIAS</h3>
         <div class="tabela-relatorio-complementar-wrap tabela-renuncia-relatorio-wrap tabela-renuncia-vincendas-wrap">
@@ -1236,7 +1241,7 @@ function gerarSecaoInformacoesComplementaresRelatorioProfissional(continuaEmNova
     const alteradas = obterCompetenciasModificadasRelatorio();
     let detalhes = '';
     if (Array.isArray(alteradas) && alteradas.length) {
-        detalhes = `<div class="tabela-relatorio-complementar-wrap"><table class="tabela-complementar-relatorio"><thead><tr><th>Competência</th><th>Valor original calculado</th><th>Valor utilizado</th></tr></thead><tbody>${alteradas.map(item => `<tr><td>${relatorioEscaparHtml(item.comp || '-')}</td><td class="num">${relatorioValorMoeda(item.valorOriginal)}</td><td class="num">${relatorioValorMoeda(item.valorEditado)}</td></tr>`).join('')}</tbody></table></div>`;
+        detalhes = `<div class="tabela-relatorio-complementar-wrap"><table class="tabela-complementar-relatorio"><thead><tr><th>Comp.</th><th>Valor original calculado</th><th>Valor utilizado</th></tr></thead><tbody>${alteradas.map(item => `<tr><td>${relatorioEscaparHtml(item.comp || '-')}</td><td class="num">${relatorioValorMoeda(item.valorOriginal)}</td><td class="num">${relatorioValorMoeda(item.valorEditado)}</td></tr>`).join('')}</tbody></table></div>`;
     }
     return `<section class="secao-relatorio secao-informacoes-complementares-relatorio ${continuaEmNovaPagina ? 'continua-em-pagina' : ''}">
         <h2>Informações Complementares</h2>
